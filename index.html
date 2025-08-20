@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+  <meta charset="UTF-8">
+  <title>పోలోజు వంశవృక్షం</title>
+  <style>
+    body {
+      font-family: 'Noto Serif Telugu', serif;
+      background: url('background.jpg') no-repeat center center fixed; /* <-- మీ image పేరు ఇక్కడ */
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      color: #2e1a0f;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5em;
+      color: darkred;
+      text-shadow: 2px 2px 4px #fff;
+      margin-top: 20px;
+    }
+    h2 {
+      font-size: 1.5em;
+      color: darkgreen;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 3px #fff;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    li {
+      margin: 10px auto;
+      padding: 10px 20px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 12px;
+      display: inline-block;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    li:hover {
+      transform: scale(1.05);
+      background: rgba(255, 255, 200, 0.95);
+    }
+    .children {
+      display: none;
+      margin-left: 30px;
+      margin-top: 10px;
+    }
+    .expanded > .children {
+      display: block;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>పోలోజు వంశవృక్షం</h1>
+  <h2>సనాతన</h2>
+  <div id="tree">
+    <ul>
+      <li onclick="toggle(this)">శాంభయ్య
+        <ul class="children">
+          <li onclick="toggle(this)">ఎల్లయ్య
+            <ul class="children">
+              <li onclick="toggle(this)">యెంకయ్య
+                <ul class="children">
+                  <li>ఎల్లయ్య</li>
+                  <li>రామలచ్చయ్య</li>
+                  <li>చంద్రయ్య</li>
+                </ul>
+              </li>
+              <li onclick="toggle(this)">వెంకట్ నర్సు
+                <ul class="children">
+                  <li>సత్తయ్య</li>
+                  <li>రాములు</li>
+                  <li>యాదగిరి</li>
+                  <li>శ్రీ రాములు</li>
+                </ul>
+              </li>
+              <li onclick="toggle(this)">లక్ష్మి నర్సు
+                <ul class="children">
+                  <li>నారాయణ</li>
+                  <li>సుదర్శన్</li>
+                  <li>బ్రహ్మచారి</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    function toggle(el) {
+      el.classList.toggle("expanded");
+    }
+  </script>
+</body>
+</html>
